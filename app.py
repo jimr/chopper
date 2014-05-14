@@ -35,7 +35,7 @@ def chop():
 
     file_path = bocho(
         out_path, pages=pages, angle=25, zoom=1.35, reverse=True, affine=True,
-        offset=(15, -5), spacing=(40, 0), border=10,
+        offset=(15, -5), spacing=(40, 0), border=10, use_convert=True,
     )
 
     with open(file_path) as f:
