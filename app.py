@@ -35,7 +35,7 @@ def chop():
 
     file_path = bocho(
         out_path, pages=pages, angle=25, zoom=1.35, reverse=True, affine=True,
-        offset=(15, -5), spacing=(40, 0), border=10, use_convert=True,
+        offset=(14, -5), spacing=(40, 0), border=4, use_convert=True,
     )
 
     with open(file_path) as f:
@@ -46,4 +46,4 @@ def chop():
 
 if __name__ == '__main__':
     app.debug = DEBUG
-    app.run(host='0.0.0.0', port=6000)
+    app.run(port=6000)
