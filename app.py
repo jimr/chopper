@@ -4,7 +4,7 @@
 import os
 import tempfile
 
-from bocho import bocho
+from bocho import assemble
 from flask import Flask, make_response, request, render_template
 from werkzeug import secure_filename
 
@@ -33,9 +33,10 @@ def chop():
     os.close(fd)
     f.save(out_path)
 
-    file_path = bocho(
+    file_path = assemble(
         out_path, pages=pages, angle=25, zoom=1.35, reverse=True, affine=True,
-        offset=(14, -5), spacing=(40, 0), border=4, use_convert=True,
+        offset_x=14, offset_y=-5, spacing_x=40, spacing_y=0, border=4,
+        use_convert=True,
     )
 
     with open(file_path) as f:
